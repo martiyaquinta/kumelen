@@ -1,0 +1,65 @@
+<section class="section section--grey" id="faq">
+  <div class="container">
+    <div class="section__header">
+      <span class="tag tag--blue">Preguntas frecuentes</span>
+      <h2 class="h2 h2--blue">Todo lo que<br><span class="accent">necesitás saber</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿Necesito experiencia previa?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">No necesariamente. Podés consultar aunque nunca hayas corrido o aunque estés retomando después de un tiempo. Te orientamos según tu punto de partida.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿El grupo es solo para corredores avanzados?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">No. La idea es que haya acompañamiento para distintos niveles, desde personas que quieren empezar hasta quienes buscan mejorar su rendimiento.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿Puedo probar una clase?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">Sí. Escribinos por WhatsApp y coordinamos la mejor opción para que puedas sumarte.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿Dónde entrenan?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">Entrenamos en Tandil. Los puntos de encuentro pueden variar según el grupo, la planificación y el tipo de entrenamiento.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿Qué tengo que llevar?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">Ropa cómoda, zapatillas para correr y ganas de empezar. Si tenés dudas sobre tu nivel o condición física, te orientamos antes de sumarte.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q__text">¿Me puedo sumar si me da vergüenza o estoy fuera de ritmo?</span><div class="faq-q__icon"><svg viewBox="0 0 14 14"><polyline points="2 4 7 9 12 4"/></svg></div></div>
+        <div class="faq-a"><div class="faq-a__inner">Sí. Muchas personas empiezan con esa misma duda. El objetivo es acompañarte para que puedas avanzar de forma progresiva y sin presión.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list { max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+  .faq-item { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.05); }
+  .faq-q { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; cursor:pointer; user-select:none; gap:16px; }
+  .faq-q__text { font-weight:600; font-size:15px; line-height:1.45; }
+  .faq-q__icon { width:28px; height:28px; border-radius:50%; background: var(--azul-claro); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .25s; }
+  .faq-q__icon svg { width:13px; height:13px; stroke: var(--azul); fill:none; stroke-width:2.5; transition:transform .25s; }
+  .faq-item.open .faq-q__icon { background: var(--naranja); }
+  .faq-item.open .faq-q__icon svg { transform:rotate(180deg); stroke:#fff; }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height .3s ease, padding .3s; }
+  .faq-a__inner { padding:0 22px 18px; font-size:14px; color:#666; line-height:1.8; border-top:1px solid #f0f0f0; padding-top:14px; }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const answer = item.querySelector('.faq-a');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>

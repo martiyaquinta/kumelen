@@ -1,0 +1,46 @@
+<section class="section section--blue" id="diferencial">
+  <div class="container">
+    <div class="diferencial__inner">
+      <div class="diferencial__text">
+        <span class="tag tag--orange">Por qué Kumelen</span>
+        <h2 class="h2 h2--white" style="margin:12px 0 16px;">No se trata solo de<br><span class="accent">salir a correr</span></h2>
+        <p class="body-text body-text--white">Entrenar en grupo te ayuda a sostener el hábito, mejorar con más seguridad y disfrutar el proceso. En Kumelen combinamos entrenamiento, acompañamiento y comunidad para que puedas avanzar sin sentir que estás solo.</p>
+        <p class="body-text body-text--white" style="margin-top:14px">Acá no necesitás llegar con experiencia previa ni estar en tu mejor estado físico. Te orientamos para que encuentres el grupo y el ritmo adecuados para vos.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="value-card__title">Comunidad</div>
+          <div class="value-card__desc">Entrenamos juntos, crecemos juntos. El grupo es parte fundamental.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="value-card__title">Movimiento</div>
+          <div class="value-card__desc">Cada paso nos lleva más lejos. Progresión real y medible.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <div class="value-card__title">Superación</div>
+          <div class="value-card__desc">Desafiamos límites y celebramos cada logro personal.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="value-card__title">Bienestar</div>
+          <div class="value-card__desc">Cuerpo, mente y energía en equilibrio. Más que correr.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<style>
+  .diferencial__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  @media(max-width:768px){ .diferencial__inner{ grid-template-columns:1fr; gap:48px; } }
+  .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .value-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 20px 18px; }
+  .value-card__icon { width: 40px; height:40px; background: rgba(255,106,0,.18); border-radius: 10px; display: flex; align-items:center; justify-content:center; margin-bottom: 10px; }
+  .value-card__icon svg { width:20px; height:20px; stroke: var(--naranja); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .value-card__title { font-family:'Barlow Condensed', sans-serif; font-weight:800; font-size:15px; text-transform:uppercase; letter-spacing:.04em; color: var(--naranja); margin-bottom:4px; }
+  .value-card__desc { font-size:12px; color:rgba(255,255,255,.6); line-height:1.5; }
+</style>

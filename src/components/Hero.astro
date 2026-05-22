@@ -1,0 +1,96 @@
+<section class="hero" id="inicio">
+  <div class="hero__lines">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-100 400 Q400 100 1600 350" stroke="white" stroke-width="3" fill="none"/>
+      <path d="M-100 420 Q400 120 1600 370" stroke="white" stroke-width="2" fill="none"/>
+      <path d="M-100 440 Q400 140 1600 390" stroke="white" stroke-width="1.5" fill="none"/>
+      <path d="M-100 460 Q400 160 1600 410" stroke="white" stroke-width="1" fill="none"/>
+      <path d="M-100 480 Q400 180 1600 430" stroke="white" stroke-width="0.8" fill="none"/>
+    </svg>
+  </div>
+  <div class="hero__streaks">
+    <div class="hero__streak"></div>
+    <div class="hero__streak"></div>
+    <div class="hero__streak"></div>
+  </div>
+  <div class="hero__glow"></div>
+  <div class="hero__content">
+    <div class="hero__text">
+      <div class="hero__eyebrow">
+        <span class="tag tag--orange">📍 Tandil · Todos los niveles</span>
+      </div>
+      <h1 class="h1 hero__h1">
+        Grupo de running<br>en Tandil para<br>
+        <span class="accent">empezar y mejorar</span>
+      </h1>
+      <p class="hero__subtitle">
+        Entrenamientos guiados para distintos niveles, con acompañamiento profesional, planificación progresiva y una comunidad que te ayuda a sostener el hábito.
+      </p>
+      <div class="hero__ctas">
+        <a href="https://wa.me/5492494673961?text=Hola%2C%20quiero%20sumarme%20a%20Kumelen%20Running"
+           class="btn btn--orange btn-arrow" target="_blank" rel="noopener">Quiero sumarme al grupo</a>
+        <a href="#como-funciona" class="btn btn--outline-white">Ver cómo funciona</a>
+      </div>
+      <p class="hero__micro">Consultanos por WhatsApp y te orientamos según tu nivel.</p>
+    </div>
+    <div class="hero__badge">
+      <svg class="hero__runner" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="22" r="10" fill="#FF6A00" opacity=".9"/>
+        <path d="M80 32 Q72 48 60 58 Q52 64 42 78 L38 95" stroke="#FF6A00" stroke-width="5" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M60 58 Q68 70 72 82 L80 96" stroke="#FF6A00" stroke-width="5" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M74 38 Q60 30 46 35 Q38 38 32 44" stroke="#FF6A00" stroke-width="5" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M74 38 Q82 44 88 55" stroke="#FF6A00" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
+        <path d="M20 72 L50 72" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+        <path d="M14 80 L44 80" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity=".15"/>
+        <path d="M22 88 L46 88" stroke="white" stroke-width="1" stroke-linecap="round" opacity=".12"/>
+      </svg>
+      <div class="hero__stats">
+        <div class="hero__stat"><div class="hero__stat-n">AL AIRE</div><div class="hero__stat-l">Libre</div></div>
+        <div class="hero__stat"><div class="hero__stat-n">TODOS</div><div class="hero__stat-l">los niveles</div></div>
+        <div class="hero__stat"><div class="hero__stat-n">GUÍA</div><div class="hero__stat-l">profesional</div></div>
+        <div class="hero__stat"><div class="hero__stat-n">TANDIL</div><div class="hero__stat-l">Ciudad</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(140deg, #0D3D9F 0%, #082870 55%, #041640 100%);
+    display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 68px;
+  }
+  .hero__lines { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .hero__lines svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 55%; opacity: .1; }
+  .hero__streaks { position: absolute; inset: 0; pointer-events: none; }
+  .hero__streak { position: absolute; right: 0; height: 3px; border-radius: 2px; }
+  .hero__streak:nth-child(1) { width:42%; top:38%; background: linear-gradient(90deg, transparent, var(--naranja)); opacity:.55; }
+  .hero__streak:nth-child(2) { width:30%; top:calc(38% + 10px); background: linear-gradient(90deg, transparent, rgba(255,255,255,.5)); opacity:.4; }
+  .hero__streak:nth-child(3) { width:18%; top:calc(38% + 20px); background: linear-gradient(90deg, transparent, rgba(255,255,255,.25)); opacity:.3; }
+  .hero__glow {
+    position: absolute; right: -180px; top: 50%; transform: translateY(-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,106,0,.18) 0%, transparent 70%); pointer-events: none;
+  }
+  .hero__content {
+    position: relative; z-index: 2; max-width: 1100px; margin: 0 auto;
+    padding: 80px 24px; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; width: 100%;
+  }
+  .hero__eyebrow { margin-bottom: 18px; }
+  .hero__h1 { color:#fff; margin-bottom: 20px; }
+  .hero__subtitle { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.82); max-width: 520px; margin-bottom: 36px; }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+  .hero__micro { font-size: 12px; color: rgba(255,255,255,.45); }
+  .hero__badge {
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 24px; padding: 32px 28px; display: flex; flex-direction: column;
+    align-items: center; gap: 20px; min-width: 220px; backdrop-filter: blur(8px);
+  }
+  .hero__runner { width: 120px; height: 120px; }
+  .hero__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+  .hero__stat { background: rgba(255,255,255,.07); border-radius: 12px; padding: 10px 8px; text-align: center; }
+  .hero__stat-n { font-family:'Barlow Condensed', sans-serif; font-weight: 900; font-size: 26px; color: var(--naranja); line-height: 1; }
+  .hero__stat-l { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: rgba(255,255,255,.55); margin-top: 2px; }
+  @media(max-width:768px) { .hero__content { grid-template-columns:1fr; } .hero__badge { display:none; } }
+</style>

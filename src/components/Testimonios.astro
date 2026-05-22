@@ -1,0 +1,48 @@
+<section class="section section--white" id="testimonios">
+  <div class="container">
+    <div class="section__header">
+      <span class="tag tag--blue">Testimonios</span>
+      <h2 class="h2 h2--blue">Personas que ya se animaron<br><span class="accent">a empezar</span></h2>
+    </div>
+    <div class="testimonios-grid">
+      <div class="test-card">
+        <div class="test-card__stars">★★★★★</div>
+        <p class="test-card__text">"Arranqué sin saber si iba a poder sostenerlo, pero el grupo me ayudó a crear el hábito."</p>
+        <div class="test-card__author">
+          <div class="test-card__avatar">M</div>
+          <div><div class="test-card__name">Miembro del grupo</div><div class="test-card__role">Kumelen Running · Tandil</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-card__stars">★★★★★</div>
+        <p class="test-card__text">"Lo mejor es entrenar acompañado. Te motiva y te dan ganas de seguir mejorando."</p>
+        <div class="test-card__author">
+          <div class="test-card__avatar" style="background:var(--naranja)">A</div>
+          <div><div class="test-card__name">Miembro del grupo</div><div class="test-card__role">Kumelen Running · Tandil</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-card__stars">★★★★★</div>
+        <p class="test-card__text">"Me ayudó mucho tener una planificación y profes que te corrigen y te acompañan."</p>
+        <div class="test-card__author">
+          <div class="test-card__avatar" style="background:#1a6b3c">L</div>
+          <div><div class="test-card__name">Miembro del grupo</div><div class="test-card__role">Kumelen Running · Tandil</div></div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#bbb;margin-top:24px;">* Reemplazar con testimonios reales cuando estén disponibles.</p>
+  </div>
+</section>
+
+<style>
+  .testimonios-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media(max-width:860px){ .testimonios-grid{ grid-template-columns:1fr; max-width:480px; margin:0 auto; } }
+  .test-card { background: var(--gris-suave); border-radius:20px; padding:30px 28px; position:relative; overflow:hidden; }
+  .test-card::before { content:'\201C'; font-family:Georgia,serif; font-size:90px; color: var(--naranja); opacity:.2; position:absolute; top:0; left:14px; line-height:1; }
+  .test-card__stars { color: var(--naranja); font-size:14px; margin-bottom:12px; }
+  .test-card__text { font-size:15px; line-height:1.75; color: var(--gris-oscuro); margin-bottom:22px; position:relative; z-index:1; }
+  .test-card__author { display:flex; align-items:center; gap:12px; }
+  .test-card__avatar { width:42px; height:42px; border-radius:50%; background: var(--azul); display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; color:#fff; flex-shrink:0; }
+  .test-card__name { font-weight:700; font-size:14px; }
+  .test-card__role { font-size:12px; color:#999; }
+</style>

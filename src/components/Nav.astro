@@ -1,0 +1,81 @@
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <div><span class="nav__logo-k">K</span>UMELEN</div>
+      <div class="nav__logo-sub">Running</div>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#para-quien">Para vos</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#horarios">Horarios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li>
+        <a href="https://www.instagram.com/kumelenrunning_trail" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:5px;color:var(--naranja)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          Instagram
+        </a>
+      </li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://wa.me/5492494673961?text=Hola%2C%20quiero%20sumarme%20a%20Kumelen%20Running"
+         class="btn btn--orange btn-arrow" target="_blank" rel="noopener">Sumate ahora</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 1000;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(13,61,159,.08);
+  }
+  .nav__inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 68px;
+  }
+  .nav__logo {
+    font-family:'Barlow Condensed', sans-serif; font-weight: 900; font-size: 26px;
+    text-transform: uppercase; color: var(--azul); display: flex; flex-direction: column; line-height: 1;
+  }
+  .nav__logo-k { color: var(--naranja); }
+  .nav__logo-sub { font-size: 10px; font-weight: 700; letter-spacing: .18em; color: var(--azul); margin-top: 1px; }
+  .nav__links { display: flex; align-items: center; gap: 28px; list-style: none; }
+  .nav__links a {
+    font-size: 13px; font-weight: 600; color: var(--gris-oscuro);
+    text-transform: uppercase; letter-spacing: .06em; transition: color .2s;
+  }
+  .nav__links a:hover { color: var(--azul); }
+  .nav__hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; background: none; border: none; padding: 4px;
+  }
+  .nav__hamburger span { display: block; width: 24px; height: 2px; background: var(--azul); border-radius: 2px; }
+  @media (max-width: 860px) {
+    .nav__links, .nav__cta { display: none; }
+    .nav__hamburger { display: flex; }
+  }
+</style>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__links a');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    sections.forEach(s => {
+      if (scrollY >= s.offsetTop - 100 && scrollY < s.offsetTop + s.offsetHeight - 100) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + s.id ? 'var(--naranja)' : '';
+        });
+      }
+    });
+    document.querySelector('.nav').style.boxShadow =
+      scrollY > 10 ? '0 4px 24px rgba(0,0,0,.1)' : '';
+  });
+</script>
