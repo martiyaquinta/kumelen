@@ -23,9 +23,30 @@
       <a href="https://wa.me/5492494673961?text=Hola%2C%20quiero%20sumarme%20a%20Kumelen"
          class="btn btn--orange btn-arrow" target="_blank" rel="noopener">Empezá ahora</a>
     </div>
-    <button class="nav__hamburger" aria-label="Menú">
+    <button class="nav__hamburger" aria-label="Menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div class="nav__mobile">
+    <ul class="nav__mobile-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#horarios">Horarios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li>
+        <a href="https://www.instagram.com/kumelenrunning_trail" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:6px;color:var(--naranja)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          Instagram
+        </a>
+      </li>
+    </ul>
+    <a href="https://wa.me/5492494673961?text=Hola%2C%20quiero%20sumarme%20a%20Kumelen"
+       class="btn btn--orange btn-arrow nav__mobile-cta" target="_blank" rel="noopener">Empezá ahora</a>
   </div>
 </nav>
 
@@ -52,11 +73,43 @@
     text-transform: uppercase; letter-spacing: .06em; transition: color .2s;
   }
   .nav__links a:hover { color: var(--azul); }
+
+  /* Hamburger */
   .nav__hamburger {
     display: none; flex-direction: column; gap: 5px;
     cursor: pointer; background: none; border: none; padding: 4px;
   }
-  .nav__hamburger span { display: block; width: 24px; height: 2px; background: var(--azul); border-radius: 2px; }
+  .nav__hamburger span {
+    display: block; width: 26px; height: 2.5px;
+    background: var(--azul); border-radius: 2px;
+    transition: transform .25s, opacity .25s;
+  }
+  /* Hamburger → X */
+  .nav__hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .nav__hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav__hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* Menú móvil */
+  .nav__mobile {
+    display: none;
+    flex-direction: column; gap: 0;
+    background: rgba(255,255,255,.98);
+    border-top: 1px solid rgba(13,61,159,.08);
+    padding: 16px 24px 24px;
+  }
+  .nav__mobile.open { display: flex; }
+  .nav__mobile-links { list-style: none; display: flex; flex-direction: column; }
+  .nav__mobile-links li a {
+    display: block; padding: 14px 0;
+    font-size: 16px; font-weight: 700; color: var(--gris-oscuro);
+    text-transform: uppercase; letter-spacing: .06em;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    transition: color .2s;
+  }
+  .nav__mobile-links li:last-child a { border-bottom: none; }
+  .nav__mobile-links li a:hover { color: var(--azul); }
+  .nav__mobile-cta { margin-top: 20px; text-align: center; justify-content: center; }
+
   @media (max-width: 860px) {
     .nav__links, .nav__cta { display: none; }
     .nav__hamburger { display: flex; }
@@ -64,6 +117,25 @@
 </style>
 
 <script>
+  const hamburger = document.querySelector('.nav__hamburger');
+  const mobileMenu = document.querySelector('.nav__mobile');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen.toString());
+  });
+
+  // Cerrar menú al hacer click en un link
+  document.querySelectorAll('.nav__mobile-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll: highlight + sombra
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__links a');
   window.addEventListener('scroll', () => {
